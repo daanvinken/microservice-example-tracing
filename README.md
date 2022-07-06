@@ -24,6 +24,19 @@ cd -
 
 If everything goes well you can now open `http://localhost:8761`
 
+The setup of databases depends on how you run the project. Each service needs a database on the host it is running on.
+Simples set up is to use the postgres container, which would work out of the box with Docker:
+```shell
+sudo docker run \
+-d \
+--name postgres \
+--network host \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=admin \
+postgres
+```
+
+
 Start individual microservice using below commands
 
 1. User Service
